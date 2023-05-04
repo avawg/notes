@@ -31,7 +31,7 @@
 | **c** | change 先删除后插入编辑 |
 | r | replace r替换一个字符，R跟随光标一直替换 | 
 | s | substitute 删除一个字符并进入插入模式 |  
-| [number]\<command>[text object] | [number] w/$/t{char} |
+| [number]\<command>[text object] | [number]\<d/c/y>[w/$/t{char}] |
 
 **复制粘贴**
 | 指令 | 功能 |
@@ -47,7 +47,7 @@
 | :---: | --- |
 | /word | 向光标之下搜索名为word的字符串 |
 | n N | 重复前一个搜索动作， 与n相反方向搜索 |
-| :[range] s/pattern/word/flags | 在range范围内将pattern串替换为word。其中range有，默认表示当前行，n1,n2表示两行之间，%表示全文；flags: g(global)全局范围 c(confirm)确认 n(number)统计匹配次数而不替换 |  
+| :[range] s/pattern/word/flags | 在range范围内将pattern串替换为word。其中range有：默认表示当前行，n1,n2表示两行之间，%表示全文；flags: g(global)全局范围 c(confirm)确认 n(number)统计匹配次数而不替换 |  
 | ~ | 字符大小写转换 |
 
 **文件保存** 
