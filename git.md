@@ -2,18 +2,47 @@
 如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，**必须使用git lfs clone**。
 
 ### 配置
-#### 基本信息配置
+**基本信息配置**  
 git config --global user.name "wang gang"  
 git config --global user.email "1182834046@qq.com"  
-#### 换行符
+
+**换行符**  
 windows: git config --global core.autocrlf true  
 linux | mac: git config --global core.autocrlf input  
-#### 中文编码支持
+
+**中文编码支持**  
 git config --global i18n.commitencoding utf-8  
 git config --global i18n.logoutputencoding utf-8  
-#### 显示路径的中文
+
+**显示中文路径**  
 git config --global core.quotepath false  
-#### ssh认证
+
+**ssh认证**  
 ssh-keygen -t rsa -C 1182834046@qq.com  
 测试是否配置成功 ssh -T git@github.com  
 
+**初始化工作区**  
+- git clone  
+- git init, git remote add origin , git push -u origin master  
+
+**记录修改**  
+- add 添加文件  
+- rm 删除文件  
+- mv 移动文件  
+- restore 复原修改  
+
+git log 查看commit日志  
+git status 查看状态  
+git diff 查看更改  
+
+**分支管理**  
+git branch  
+git switch 切换分支  
+git commit 提交更改  
+git merge | rebase 合并分支  
+git reset 切换节点  
+  
+**远程合作**  
+git fetch 下载最新文件  
+git pull 下载并更新  
+git push 向远程推送  
