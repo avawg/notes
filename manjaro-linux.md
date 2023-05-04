@@ -1,27 +1,17 @@
 ### 软件
 **软件安装位置**  
-系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/bin /usr/lib /usr/include  
+系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/sbin /usr/lib /usr/include  
 第三方软件 /usr/share, /opt  
-～/用户个人配置及软件  
 
-*配置文件位置**  
+**配置文件位置**  
 系统级别配置文件 /etc  
 用户级别配置  ～/.config  ~/.bashrc ~/.zshrc等  
 软件安装目录下  
 
+**软件安装**  
 二进制包安装 | 源码包查看源码，编译，再安装  
 脚本安装，执行sh文件  
-
-### pacman
-pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
-pacman -Sc清理安装包  
-pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
-pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
--Qdt显示不再被依赖的孤儿依赖 pacman -R $(pacman -Qdtq)卸载这些软件
-
-**sh** the standard command language interpreter  
-
-### 下载安装包,无install.sh文件,自行安装
+**下载二进制程序包,无install.sh文件,添加应用程序启动图标**  
 在/usr/share/applications/下创建*.desktop文件，编辑  
 ```
 [Desktop Entry]  
@@ -31,17 +21,22 @@ Icon=<icon_path>
 Type=Application  
 Terminal=false|true 
 ```
-### 设备挂载
-mount [设备名] [挂载点]  
-umount [挂载点]
 
-### shell
-tab 提示补全  
+### pacman
+pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
+pacman -Sc清理安装包  
+pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
+pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
+-Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
+
+**sh** the standard command language interpreter  
+
+**shell**  
 ctrl + A: 光标移到行首  
 ctrl + E: 光标移到行尾  
 ctrl + U: 删除光标前的整行内容  
 
-#### 服务自启动
+**服务自启动**  
 在/etc/systemd/system/下添加|删除*.service配置文件  
 ```
 添加如下内容:  
@@ -54,18 +49,21 @@ ExecStart=<executable_path>
 WantedBy=multi-user.target  
 ```
 systemctl enable | start | stop | disable [服务名]  
-后台执行  
-nohup默认将输出信息到nohup.txt文件中  
-& 后台执行，程序输出到控制台上   
-\> *.txt 输出重定向，覆盖写，2 >&1将标准错误重定向到标准输出  
 
 **服务关闭**
 ps aux | grep [进程|服务名]  
 kill -9 [id]  
+**后台执行**    
+nohup默认将输出信息到nohup.txt文件中  
+& 后台执行，程序输出到控制台上   
+\> *.txt 输出重定向，覆盖写，2 >&1将标准错误重定向到标准输出  
 
-#### 定时任务
+**定时任务**  
 crontab -e 分 时 日 月 周 指令，缺省时间用*  
 
+**设备挂载**  
+mount [设备名] [挂载点]  
+umount [挂载点]
 **压缩解压缩**  
 tar -xvf 解包e[x]tract [v]erbose [f]ile  
 tar -cvf 打包[c]reate  
