@@ -42,7 +42,8 @@ git commit file_name -m "" 提交更改
 git merge | rebase 合并分支  
 git reset 切换节点  
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
-git checkout 回退未在暂存区的更改  
+git reset HEAD file  
+git checkout -- file 回退未在暂存区的更改  
   
 **远程合作**  
 git fetch 下载最新文件  
