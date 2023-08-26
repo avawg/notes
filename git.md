@@ -33,7 +33,7 @@ ssh-keygen -t rsa -C 1182834046@qq.com
 
 git log 查看commit日志  
 git status 查看状态  
-git diff 查看更改  
+git diff 查看更改  --name--status
 
 **分支管理**  
 git branch  
