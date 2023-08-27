@@ -26,7 +26,7 @@ ssh-keygen -t rsa -C 1182834046@qq.com
 - git init, git remote add origin , git push -u origin master  
 
 **记录修改**  
-- add file_name 添加文件  
+- add file 添加文件  
 - rm 删除文件  
 - mv 移动文件  
 - restore 复原修改  
@@ -38,14 +38,15 @@ git diff 查看更改  --name--status
 **分支管理**  
 git branch  
 git switch 切换分支  
-git commit file_name -m "" 提交更改  
-git merge | rebase 合并分支  
+git commit file -m "" 提交更改  --amend  修改最近一次提交的日志  
+git merge | rebase source_branch dst_branch 合并分支  
 git reset 切换节点  
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
 git reset HEAD file  
 git checkout -- file 回退未在暂存区的更改  
   
 **远程合作**  
-git fetch 下载最新文件  
-git pull 下载并更新  
-git push 向远程推送  
+git push origin branch 向远程推送  
+git fetch branch: local_branch 下载最新文件  
+git pull origin下载并更新  
+
