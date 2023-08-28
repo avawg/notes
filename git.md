@@ -40,10 +40,10 @@ git branch
 git switch 切换分支  
 git commit file -m "" 提交更改  --amend  修改最近一次提交的日志  
 git merge branch 合并分支  
-git rebase dst_branch  合并分支  
-git reset 切换节点  
+git rebase dst_branch  合并分支   
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
 git reset HEAD file  
+git revert HEAD 新建一次提交，撤销当前HEAD的更改  
 git checkout file 回退未在暂存区的更改  
   
 **远程合作**  
