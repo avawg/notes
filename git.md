@@ -48,6 +48,6 @@ git checkout file 回退未在暂存区的更改
   
 **远程合作**  
 git push origin branch 向远程推送  
-git fetch branch: local_branch 下载最新文件  
+git fetch origin branch: local_branch 下载最新文件  
 git pull origin下载并更新  
 
