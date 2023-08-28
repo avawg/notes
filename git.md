@@ -38,16 +38,19 @@ git diff 查看更改  --name--status
 **分支管理**  
 git branch  
 git switch 切换分支  
+git checkout 切换分支  
+git checkout file 回退未在暂存区的更改  -b branch origin_branch设置跟踪远程仓库  
+
 git commit file -m "" 提交更改  --amend  修改最近一次提交的日志  
 git merge branch 合并分支  
 git rebase dst_branch  合并分支   
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
 git reset HEAD file  
 git revert HEAD 新建一次提交，撤销当前HEAD的更改  
-git checkout file 回退未在暂存区的更改  
+
   
 **远程合作**  
 git push origin branch 向远程推送  
-git fetch origin branch: local_branch 下载最新文件  
+git fetch origin branch:local_branch 下载最新文件  
 git pull origin下载并更新  
 
