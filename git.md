@@ -39,7 +39,8 @@ git diff 查看更改  --name--status
 git branch  
 git switch 切换分支  
 git commit file -m "" 提交更改  --amend  修改最近一次提交的日志  
-git merge | rebase source_branch dst_branch 合并分支  
+git merge branch 合并分支  
+git rebase dst_branch  合并分支  
 git reset 切换节点  
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
 git reset HEAD file  
