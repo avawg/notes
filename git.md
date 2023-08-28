@@ -43,7 +43,7 @@ git merge | rebase source_branch dst_branch 合并分支
 git reset 切换节点  
 git reset HEAD^回退上次commit提交(会保留更改,unstaged)  
 git reset HEAD file  
-git checkout -- file 回退未在暂存区的更改  
+git checkout file 回退未在暂存区的更改  
   
 **远程合作**  
 git push origin branch 向远程推送  
