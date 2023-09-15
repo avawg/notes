@@ -1,3 +1,24 @@
+### pacman
+#### 镜像源配置
+配置文件 /etc/pacman.conf
+添加清华镜像源
+```
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
+#### 软件
+```
+pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
+pacman -Sc清理安装包  
+pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
+pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
+pacman -Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
+
+pacman 有强大的AUR社区包管理器yay
+yay 使用和pacman相同
+```
+
 ### 目录
 **软件安装位置**  
 系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/sbin /usr/lib /usr/include  
@@ -28,15 +49,6 @@ Terminal=false|true
 shutdown -h[alt] now  
 重启  
 reboot | shutdown -r now
-```
-
-### pacman
-```
-pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
-pacman -Sc清理安装包  
-pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
-pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
-pacman -Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
 ```
 
 **sh**: the standard command language interpreter  
@@ -95,6 +107,20 @@ umount [挂载点]
 tar -xvf 解包e[x]tract [v]erbose [f]ile  
 tar -cvf 打包[c]reate  
 z tar.gz b tar.bz2  
+```
+
+### 输出
+```
+echo $SHELL 打印环境变量
+head -n number 输出前几行
+tail -n number 输出最后几行
+| grep pattern 仅输出匹配的行
+```
+
+### 文件查找
+查找文件和目录
+```
+find root_path -name "*pattern*"
 ```
 
 **grep** 全局正则表达式搜索和打印  
