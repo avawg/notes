@@ -1,11 +1,11 @@
-### 软件
+### 目录
 **软件安装位置**  
 系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/sbin /usr/lib /usr/include  
 第三方软件 /usr/share, /opt  
 
 **配置文件位置**  
-系统级别配置文件 /etc  
-用户级别配置  ～/.config  ~/.bashrc ~/.zshrc等  
+系统级别配置文件 目录 /etc  
+用户级别配置目录 ～/.config  ~/.bashrc ~/.zshrc等  
 软件安装目录下  
 
 **软件安装**  
@@ -22,24 +22,45 @@ Type=Application
 Terminal=false|true 
 ```
 
+### 开机关机
+```
+关机
+shutdown -h[alt] now  
+重启  
+reboot | shutdown -r now
+```
+
 ### pacman
+```
 pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
 pacman -Sc清理安装包  
 pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
 pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
--Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
+pacman -Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
+```
 
-**sh** the standard command language interpreter  
+**sh**: the standard command language interpreter  
 
-**shell**  
+###  shell快捷键
+```
 ctrl + A: 光标移到行首  
 ctrl + E: 光标移到行尾  
 ctrl + U: 删除光标前的整行内容  
+```  
 
-**服务自启动**  
-在/etc/systemd/system/下添加|删除*.service配置文件  
+### 服务
 ```
-添加如下内容:  
+systemctl start [service_name] 开启服务
+systemctl stop 关闭
+systemctl restart 重启服务
+systemctl enable [service_name]   服务开机启动
+systemctl disable 取消服务开机自启动
+```
+
+### 服务自启动
+```
+在/etc/systemd/system/下添加|删除*.service配置文件  
+添加如下内容
 [Unit]  
 Description=<service_description>  
 [Service]  
@@ -48,35 +69,37 @@ ExecStart=<executable_path>
 [Install]  
 WantedBy=multi-user.target  
 ```
-systemctl enable | start | stop | disable [服务名]  
 
-**服务关闭**
-ps aux | grep [进程|服务名]  
+### 进程关闭
+```
+ps aux | grep [process_name | service_name]  
 kill -9 [id]  
-**后台执行**    
+```
+
+### 后台执行   
 nohup默认将输出信息到nohup.txt文件中  
 & 后台执行，程序输出到控制台上   
 \> *.txt 输出重定向，覆盖写，2 >&1将标准错误重定向到标准输出  
 
-**定时任务**  
+### 定时任务
 crontab -e 分 时 日 月 周 指令，缺省时间用*  
 
-**设备挂载**  
+### 设备挂载
+```
 mount [设备名] [挂载点]  
 umount [挂载点]
-**压缩解压缩**  
+```  
+
+### 压缩解压缩
+```
 tar -xvf 解包e[x]tract [v]erbose [f]ile  
 tar -cvf 打包[c]reate  
 z tar.gz b tar.bz2  
-
-**关机**  
-shutdown -h now  
-**重启**  
-reboot | shutdown -h[alt] now
+```
 
 **grep** 全局正则表达式搜索和打印  
---extended-regexp 使用扩展正则表达式  
---ignore-case 忽略大小写  
+--e(xtended-regexp) 使用扩展正则表达式  
+--i(gnore-case) 忽略大小写  
 --with-filename --line-number 匹配的文件名和行号  
 --only-matching 只输出匹配的文本  
 --fixed-strings 不使用正则表达式  
