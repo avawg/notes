@@ -3,6 +3,8 @@
 
 ### 配置
 
+配置文件: ~/.gitconfig  
+
 用户名和邮箱配置  
 ```
 git config --global user.name "wang gang"  
