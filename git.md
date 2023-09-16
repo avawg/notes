@@ -49,9 +49,11 @@ ssh-keygen -t rsa -C 1182834046@qq.com
 ```
 
 ### 日志&差异
+```
 git log 查看commit日志  
 git status 查看状态  
 git diff 查看更改  --name--status
+```
 
 ### 分支管理  
 ```
