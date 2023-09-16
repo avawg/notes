@@ -9,24 +9,24 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 #### 软件
 ```
-pacman -S安装软件 -y从仓库源获取最新软件信息  -yy强制获取 -u刷新 -s从仓库搜索软件包  
+pacman -S安装软件 -y从仓库源获取最新软件信息 -yy强制获取 -u刷新 -s从仓库搜索软件包  
 pacman -Sc清理安装包  
 pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
 pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
-pacman -Qdt显示不再被依赖的孤儿软件 pacman -R $(pacman -Qdtq)卸载这些软件
+pacman -Qdt显示不再被依赖的孤儿软件，pacman -R $(pacman -Qdtq)卸载这些软件
 
-pacman 有强大的AUR社区包管理器yay
+pacman有强大的AUR社区包管理器yay
 yay 使用和pacman相同
 ```
 
 ### 目录
 **软件安装位置**  
-系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/sbin /usr/lib /usr/include  
-第三方软件 /usr/share, /opt  
+系统级别软件安装在/usr目录下，相关目录/usr/bin, /usr/sbin, /usr/lib, /usr/include  
+第三方软件/usr/share, /opt  
 
 **配置文件位置**  
-系统级别配置文件 目录 /etc  
-用户级别配置目录 ～/.config  ~/.bashrc ~/.zshrc等  
+系统级别配置文件: /etc  
+用户级别配置文件: ～/.config, ~/.bashrc, ~/.zshrc等  
 软件安装目录下  
 
 **软件安装**  
