@@ -45,10 +45,8 @@ Terminal=false|true
 
 ### 开机关机
 ```
-关机
-shutdown -h[alt] now  
-重启  
-reboot | shutdown -r now
+shutdown -h[alt] now 关机    
+reboot | shutdown -r now 重启
 ```
 
 **sh**: the standard command language interpreter  
