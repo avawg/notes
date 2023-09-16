@@ -21,12 +21,12 @@ yay 使用和pacman相同
 
 ### 目录
 **软件安装位置**  
-系统级别软件安装在/usr目录下，相关目录/usr/bin /usr/sbin /usr/lib /usr/include  
-第三方软件 /usr/share, /opt  
+系统级别软件安装在/usr目录下，相关目录/usr/bin, /usr/sbin, /usr/lib, /usr/include  
+第三方软件/usr/share, /opt  
 
 **配置文件位置**  
-系统级别配置文件 目录 /etc  
-用户级别配置目录 ～/.config  ~/.bashrc ~/.zshrc等  
+系统级别配置文件: /etc  
+用户级别配置文件: ～/.config, ~/.bashrc, ~/.zshrc等  
 软件安装目录下  
 
 **软件安装**  
