@@ -1,9 +1,9 @@
-### 服务
+## 服务
 ```
 systemctl start | stop | status | restart docker
 ```
 
-### 镜像
+## 镜像
 镜像代理
 ```
 sudo mkdir -p /etc/docker
@@ -32,7 +32,7 @@ docker search
 docker rmi image-id
 ```
 
-### 容器
+## 容器
 查看本地容器  
 ```
 docker ps -a
@@ -54,5 +54,5 @@ docker exec -it [-u root] container_id bash
 docker start | stop | rm container_id
 ```
 
-### 数据卷
+## 数据卷
 将容器中的目录与宿主机的目录绑定，双方的修改会同步  
