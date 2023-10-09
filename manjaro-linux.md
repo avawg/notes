@@ -1,5 +1,5 @@
-### pacman
-#### 镜像源配置
+## pacman
+### 镜像源配置
 配置文件 /etc/pacman.conf
 添加清华镜像源
 ```
@@ -7,7 +7,7 @@
 SigLevel = Optional TrustAll
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
-#### 软件
+### 软件
 ```
 pacman -S安装软件 -y从仓库源获取最新软件信息 -yy强制获取 -u刷新 -s从仓库搜索软件包  
 pacman -Sc清理安装包  
@@ -19,13 +19,18 @@ pacman有强大的AUR社区包管理器yay
 yay 使用和pacman相同
 ```
 
-### 目录
-**软件安装位置**  
+## 目录
+### 软件安装位置
 系统级别软件安装在/usr目录下，相关目录/usr/bin, /usr/sbin, /usr/lib, /usr/include  
 第三方软件/usr/share, /opt  
 
-**配置文件位置**  
+### 配置文件位置  
 系统级别配置文件: /etc  
+
+/etc/shells 所有注册的shell  
+/etc/sudoers 注册普通用户可以执行特权用户的指令  
+
+
 用户级别配置文件: ～/.config, ~/.bashrc, ~/.zshrc等  
 软件安装目录下  
 
@@ -121,7 +126,8 @@ tail -n number 输出最后几行
 find root_path -name "*pattern*"
 ```
 
-**grep** 全局正则表达式搜索和打印  
+##  grep
+global regular expression print 全局正则表达式搜索和打印  
 --e(xtended-regexp) 使用扩展正则表达式  
 --i(gnore-case) 忽略大小写  
 --with-filename --line-number 匹配的文件名和行号  
@@ -142,3 +148,24 @@ sed 's/()/\U\1/g' 将第一个匹配组，字母大写替换
 --only-matching 只输出匹配的文本  
 --fixed-strings 不使用正则表达式  
 
+
+## 文件权限
+
+d目录,  -文件,  l软链接  
+
+| | r | w | x |
+| --- | :---: | :--: | :---: |
+|文件|  cat | vi、echo (不包括删除文件)| 执行 |
+|  目录| ls | touch、rm、cp、mv目录下的文件和目录 | cd |
+
+文件的最高权限 x  
+目录的最高权限 w, 有效权限 0 5 7  
+
+r 4, w 2, x 1  
+chmod 750 file
+
+文件默认权限
+umask 
+文件默认最大权限 666  
+目录默认最大权限 777 
+新建文件或目录的权限=最大权限(换成rwx) - umask(换成rwx)  
