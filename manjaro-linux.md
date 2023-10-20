@@ -145,17 +145,17 @@ NR表示行，$N表示第N列，下标从1开始。
 （ ）条件语句，{print }输出内容  
 
 ## sed
-1. 增
+1. 增  
 a 追加文本到指定行后  
 sed "2a abc" test.txt
 i 插入文本到指定行前  
 sed "2i abc" test.txt
 
-2. 删
+2. 删  
 删除指定的行
 sed "/abc/d" test.txt
 
-3. 改
+3. 改  
 c 用新行取代旧行  
 sed "2c abc"  test.txt  
 
