@@ -30,7 +30,6 @@ yay 使用和pacman相同
 /etc/shells 所有注册的shell  
 /etc/sudoers 注册普通用户可以执行特权用户的指令  
 
-
 用户级别配置文件: ～/.config, ~/.bashrc, ~/.zshrc等  
 软件安装目录下  
 
@@ -54,16 +53,14 @@ shutdown -h[alt] now 关机
 reboot | shutdown -r now 重启
 ```
 
-**sh**: the standard command language interpreter  
+## netstat
+-n list routes and do not resolve IP addresses to hostnames:
+-a list all ports:
+-p display PID and program names
+-t  list listening TCP ports:
+-l  list all listening ports:
 
-###  shell快捷键
-```
-ctrl + A: 光标移到行首  
-ctrl + E: 光标移到行尾  
-ctrl + U: 删除光标前的整行内容  
-```  
-
-### 服务
+## 服务
 ```
 systemctl start [service_name] 开启服务
 systemctl stop 关闭
@@ -85,16 +82,11 @@ ExecStart=<executable_path>
 WantedBy=multi-user.target  
 ```
 
-### 进程关闭
+## 进程关闭
 ```
 ps aux | grep [process_name | service_name]  
 kill -9 [id]  
 ```
-
-### 后台执行   
-nohup默认将输出信息到nohup.txt文件中  
-& 后台执行，程序输出到控制台上   
-\> *.txt 输出重定向，覆盖写，2 >&1将标准错误重定向到标准输出  
 
 ### 定时任务
 crontab -e 分 时 日 月 周 指令，缺省时间用*  
@@ -112,7 +104,7 @@ tar -cvf 打包[c]reate
 z tar.gz b tar.bz2  
 ```
 
-### 输出
+## 输出
 ```
 echo $SHELL 打印环境变量
 head -n number 输出前几行
@@ -120,7 +112,7 @@ tail -n number 输出最后几行
 | grep pattern 仅输出匹配的行
 ```
 
-### 文件查找
+## 文件查找
 查找文件和目录
 ```
 find root_path -name "*pattern*"
@@ -131,10 +123,9 @@ global regular expression print 全局正则表达式搜索和打印
 
 参数:  
 -v 过滤指定字符创内容的行  
--e(xtended-regexp) 使用扩展正则表达式  
+-E(xtended-regexp) 使用扩展正则表达式  
 -i(gnore-case) 忽略大小写  
 -n 打印出行号  
-
 
 ## awk
 把文件逐行的输入，以空格为默认文件分割符将每行切片，切开的部分再进行各种分析处理  
@@ -145,6 +136,20 @@ NR表示行，$N表示第N列，下标从1开始。
 （ ）条件语句，{print }输出内容  
 
 ## sed
+流编辑器  
+命令  
+-n 安静模式  
+-i 直接修改指定行内容
+
+动作 
+| |  |
+|-- | -- |
+| a | 新增 |
+| c  | 取代|
+| d | 删除 | 
+| i | 插入 |
+| p | 打印 |
+| s | 替换 |
 1. 增  
 a 追加文本到指定行后  
 sed "2a abc" test.txt
@@ -163,9 +168,6 @@ sed "2c abc"  test.txt
 sed 's/abc/123/g'  将出现的123替换成abc  
 -E使用扩展正则表达式，-i对文件内容进行替换  
 sed 's/()/\U\1/g' 将第一个匹配组，字母大写替换
-
-
-
 
 ## 文件权限
 
