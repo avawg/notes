@@ -82,11 +82,13 @@ WantedBy=multi-user.target
 ```
 
 ### netstat
--n list routes and do not resolve IP addresses to hostnames:
--a list all ports:
--p display PID and program names
--t  list listening TCP ports:
--l  list all listening ports:
+```
+-n list routes and do not resolve IP addresses to hostnames  
+-a list all ports  
+-p display PID and program names  
+-t  list listening TCP ports  
+-l  list all listening ports  
+```
 
 ### 定时任务
 crontab -e 分 时 日 月 周 指令，缺省时间用*  
@@ -134,8 +136,11 @@ global regular expression print 全局正则表达式搜索和打印
 把文件逐行的输入，以空格为默认文件分割符将每行切片，切开的部分再进行各种分析处理  
 
 awk [-F field-separator] 'pattern + action' {filename}  
+```
 ex: cat /etc/passwd | awk -F ':' 'BEGIN {print "name,shell"} {print $1","$7} END {print "blue,/bin/bash"}'  
-NR表示行，$N表示第N列，下标从1开始。  
+```
+
+NR表示行，$N表示第N列，下标从1开始  
 （ ）条件语句，{print }输出内容  
 
 ### sed
@@ -145,7 +150,7 @@ NR表示行，$N表示第N列，下标从1开始。
 -i 直接修改指定行内容
 
 动作 
-| |  |
+| | 功能 |
 |-- | -- |
 | a | 新增 |
 | c  | 取代|
@@ -169,7 +174,7 @@ sed "2c abc"  test.txt
 
 文本替换  
 sed 's/abc/123/g'  将出现的123替换成abc  
--E使用扩展正则表达式，-i对文件内容进行替换  
+-E使用扩展正则表达式
 sed 's/()/\U\1/g' 将第一个匹配组，字母大写替换
 
 ### 文件权限
@@ -187,8 +192,8 @@ d目录,  -文件,  l软链接
 r 4, w 2, x 1  
 chmod 750 file
 
-文件默认权限
-umask 
+文件默认权限  
+umask   
 文件默认最大权限 666  
-目录默认最大权限 777 
+目录默认最大权限 777   
 新建文件或目录的权限=最大权限(换成rwx) - umask(换成rwx)  
