@@ -46,21 +46,20 @@ Icon=<icon_path>
 Type=Application  
 Terminal=false|true 
 ```
-
+## 常用命令
 ### 开机关机
 ```
 shutdown -h[alt] now 关机    
 reboot | shutdown -r now 重启
 ```
 
-## netstat
--n list routes and do not resolve IP addresses to hostnames:
--a list all ports:
--p display PID and program names
--t  list listening TCP ports:
--l  list all listening ports:
+### 进程关闭
+```
+ps aux | grep [process_name | service_name]  
+kill -9 [id]  
+```
 
-## 服务
+### 服务
 ```
 systemctl start [service_name] 开启服务
 systemctl stop 关闭
@@ -82,11 +81,12 @@ ExecStart=<executable_path>
 WantedBy=multi-user.target  
 ```
 
-## 进程关闭
-```
-ps aux | grep [process_name | service_name]  
-kill -9 [id]  
-```
+### netstat
+-n list routes and do not resolve IP addresses to hostnames:
+-a list all ports:
+-p display PID and program names
+-t  list listening TCP ports:
+-l  list all listening ports:
 
 ### 定时任务
 crontab -e 分 时 日 月 周 指令，缺省时间用*  
@@ -103,22 +103,25 @@ tar -xvf 解包e[x]tract [v]erbose [f]ile
 tar -cvf 打包[c]reate  
 z tar.gz b tar.bz2  
 ```
-
-## 输出
+## 文件
+### 查看
 ```
-echo $SHELL 打印环境变量
 head -n number 输出前几行
 tail -n number 输出最后几行
 | grep pattern 仅输出匹配的行
 ```
 
-## 文件查找
-查找文件和目录
+### 编辑
+```
+vi [filename]
+```
+
+### 查找
 ```
 find root_path -name "*pattern*"
 ```
 
-##  grep 
+###  grep 
 global regular expression print 全局正则表达式搜索和打印  
 
 参数:  
@@ -127,7 +130,7 @@ global regular expression print 全局正则表达式搜索和打印
 -i(gnore-case) 忽略大小写  
 -n 打印出行号  
 
-## awk
+### awk
 把文件逐行的输入，以空格为默认文件分割符将每行切片，切开的部分再进行各种分析处理  
 
 awk [-F field-separator] 'pattern + action' {filename}  
@@ -135,7 +138,7 @@ ex: cat /etc/passwd | awk -F ':' 'BEGIN {print "name,shell"} {print $1","$7} END
 NR表示行，$N表示第N列，下标从1开始。  
 （ ）条件语句，{print }输出内容  
 
-## sed
+### sed
 流编辑器  
 命令  
 -n 安静模式  
@@ -169,7 +172,7 @@ sed 's/abc/123/g'  将出现的123替换成abc
 -E使用扩展正则表达式，-i对文件内容进行替换  
 sed 's/()/\U\1/g' 将第一个匹配组，字母大写替换
 
-## 文件权限
+### 文件权限
 
 d目录,  -文件,  l软链接  
 
