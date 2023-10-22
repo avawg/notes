@@ -72,10 +72,7 @@ unset var_name
 ps：执行set -u后，echo ${var_name}系统不存在的变量，会提示不存在
 
 ### 环境变量  
-
 export 将用户自定义变量导出到环境变量中
-
-
 
 创建软链接 
 ```
