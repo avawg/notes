@@ -29,7 +29,7 @@ docker search
 
 删除镜像
 ```
-docker rmi image-id
+docker rmi {image-id}
 ```
 
 ## 容器
@@ -40,18 +40,18 @@ docker ps -a
 
 创建容器
 ```
-docker run -id -name="*" image_name bash 守护式容器  
+docker run -id -name="*" {image_name} bash 守护式容器  
            -it                           交互式容器  
 ```
 
 进入容器
 ```
-docker exec -it [-u root] container_id bash
+docker exec -it [-u root] {container_id} bash
 ```
 
 开启 | 关闭 | 删除 容器
 ```
-docker start | stop | rm container_id
+docker start | stop | rm {container_id}
 ```
 
 ## 数据卷
