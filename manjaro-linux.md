@@ -103,24 +103,32 @@ umount [挂载点]
 ```
 tar -xvf 解包e[x]tract [v]erbose [f]ile  
 tar -cvf 打包[c]reate  
-z tar.gz b tar.bz2  
+-z tar.gz文件 
+-b tar.bz2文件 
 ```
 ## 文件
 ### 查看
 ```
+cat 
 head -n number 输出前几行
-tail -n number 输出最后几行
+tail -n number 输出最后几行 -f 跟踪文件输出
 | grep pattern 仅输出匹配的行
 ```
 
 ### 编辑
 ```
+cut -d [char] -f [number] 分割单词
+wc [file] 文本统计 -l行数 -w单词数 -c字节数
 vi [filename]
 ```
 
 ### 查找
 ```
 find root_path -name "*pattern*"
+-type f文件 d目录 l链接文件
+-mmin -mtime 更改时间
+-user 用户
+-group 组
 ```
 
 ###  grep 
@@ -131,6 +139,7 @@ global regular expression print 全局正则表达式搜索和打印
 -E(xtended-regexp) 使用扩展正则表达式  
 -i(gnore-case) 忽略大小写  
 -n 打印出行号  
+-r 在目录下递归查找  
 
 ### awk
 把文件逐行的输入，以空格为默认文件分割符将每行切片，切开的部分再进行各种分析处理  
@@ -173,7 +182,7 @@ c 用新行取代旧行
 sed "2c abc"  test.txt  
 
 文本替换  
-sed 's/abc/123/g'  将出现的123替换成abc  
+sed 's/abc/123/g'  将出现的123替换成abc, /是分割符号，可以换成其他字符，如#、%，g表示全局，否则只替换每行第一处   
 -E使用扩展正则表达式
 sed 's/()/\U\1/g' 将第一个匹配组，字母大写替换
 
