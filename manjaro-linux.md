@@ -105,8 +105,20 @@ crontab -e 分 时 日 月 周 指令，缺省时间用*
 
 ### 设备挂载
 ```
-mount [设备名] [挂载点]  
+mount [-t 文件系统] [设备名] [挂载点]  
 umount [挂载点]
+
+fdisk -l [fixed disk 固定磁盘]查看磁盘分区信息
+
+❯ df -h  [disk free]查看磁盘分区使用情况
+Filesystem      Size  Used Avail Use% Mounted on
+dev             7.5G     0  7.5G   0% /dev
+run             7.5G  1.9M  7.5G   1% /run
+/dev/nvme0n1p6  295G   52G  228G  19% /
+tmpfs           7.5G  126M  7.4G   2% /dev/shm
+tmpfs           7.5G  206M  7.3G   3% /tmp
+/dev/nvme0n1p1   96M   28M   69M  29% /boot/efi
+tmpfs           1.5G  164K  1.5G   1% /run/user/1000
 ```  
 
 ### 压缩解压缩
