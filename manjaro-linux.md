@@ -9,11 +9,21 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 ### 软件
 ```
-pacman -S安装软件 -y从仓库源获取最新软件信息 -yy强制获取 -u刷新 -s从仓库搜索软件包  
-pacman -Sc清理安装包  
-pacman -R卸载 -s同时卸载依赖 -n删除全局配置  
-pacman -Q查询已安装软件 -e用户安装软件 -q不带具体版本号   
+pacman -S安装软件， -s从仓库搜索软件包  
+-y, --refresh 从服务器下载新的软件包数据库 
+-u, --sysupgrade 升级所有已安装的软件包
+-c, --clean 从缓存目录中删除旧软件包
+
+pacman -R卸载
+-n, --nosave 同时删除配置文件 
+-s, --recursive 同时删除 (不会破坏其他软件包的) 依赖关系
+
+pacman -Q查询已安装软件
+-e, --explicit 列出所有单独指定安装的软件包 [过滤器]
+-q, --quiet 在查询或搜索时显示较少的信息
 pacman -Qdt显示不再被依赖的孤儿软件，pacman -R $(pacman -Qdtq)卸载这些软件
+-d, --deps 列出所有作为依赖关系安装的软件包 [过滤器]  
+-t, --unrequired 列出所有不被其他软件包要求的软件包 [过滤器]  
 
 pacman有强大的AUR社区包管理器yay
 yay 使用和pacman相同
@@ -206,3 +216,5 @@ umask
 文件默认最大权限 666  
 目录默认最大权限 777   
 新建文件或目录的权限=最大权限(换成rwx) - umask(换成rwx)  
+
+suid, sgid 
