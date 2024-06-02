@@ -160,6 +160,7 @@ find root_path -name "*pattern*"
 -mmin -mtime 更改时间
 -user 用户
 -group 组
+-perm  权限
 ```
 
 ###  grep 

@@ -1,3 +1,5 @@
+打包、部署应用程序，解决了应用和基础环境异构的问题。
+
 ## 服务
 ```
 systemctl start | stop | status | restart docker
