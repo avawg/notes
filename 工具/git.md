@@ -88,14 +88,15 @@ git commit -a modified、deleted
 
 ### 回退修改
 ```
-git reset HEAD^ 回退到上次commit提交(此次提交内容会保留,unstaged)  
+git reset HEAD^ 回退到上次commit提交(此次提交内容会保留,unstaged)
+git reset --hard 直接回退最近一次修改
 git revert HEAD 新建一次提交，撤销当前HEAD的更改  
 ```
 
 ### 合并commit记录
 ```
 git reset -i HEAD~N 合并最近N条修改记录
-s pick
+pick -> s
 ```
 
 ### 抽取修改
