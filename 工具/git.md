@@ -1,6 +1,6 @@
 如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，**必须使用git lfs clone**。
 
-### 配置
+## 配置
 
 配置文件: ~/.gitconfig  
 
@@ -39,56 +39,83 @@ ssh-keygen -t rsa -b 3072
 测试是否配置成功 ssh -T git@github.com  
 ```
 
-### 初始化工作区
+## 工作区
 ```
 - git clone  
-- git init, git remote add origin , git push -u origin master  
+- git init, git remote add origin
 ```
 
-### 记录修改 
+## 分支管理  
+```
+git branch 查看分支 -r -vv
+git switch 切换分支  
+git checkout -b branch origin_branch 新建分支并设置跟踪远程仓库分支
+```
+
+## 文件修改 
 ```
 - add file 添加文件  
 - rm 删除文件  
 - mv 移动文件  
-- restore 复原修改  
+- restore 复原修改
+- checkout file 回退未在暂存区的更改
 ```
 
-### 日志&差异
+## 日志&差异
 ```
-git log 查看commit日志  
+git log 查看commit日志
+git reflog
 git status 查看状态  
 git diff 查看更改  --name--status
 ```
 
-### 分支管理  
-```
-git branch 查看分支
-git checkout -b 切换分支  
-git checkout -b branch origin_branch设置跟踪远程仓库
-git checkout file 回退未在暂存区的更改
-```
+## 工作命令 
 
-### 提交 合并分支  
+### git add 将文件添加到暂存区
 ```
-git add 将文件添加到暂存区
 git add -A new、modified、deleted
 git add -u modified、deleted
-git add .  new、modified、deleted当前目录及子目录下ls
-git add *  new、modified
-git commit -m 
+git add . new、modified、deleted当前目录及子目录下ls
+git add * new、modified
+```
+
+### git commit 提交修改
+```
+git commit -m (commit消息，不加-m，默认打开编辑器)
+git commit --amend(不新增commit节点，id和message发生变化，时间不变) 
 git commit -a modified、deleted
-git commit file -m "" 提交更改到本地仓库（只提交部分文件）  --amend(不新增commit节点，id和message发生变化，时间不变)  
-git merge branch 合并分支  
-git rebase dst_branch  合并分支   
+```
+
+### 回退修改
+```
 git reset HEAD^ 回退到上次commit提交(此次提交内容会保留,unstaged)  
-git reset HEAD file  
 git revert HEAD 新建一次提交，撤销当前HEAD的更改  
+```
+
+### 合并commit记录
+```
+git reset -i HEAD~N 合并最近N条修改记录
+s pick
+```
+
+### 抽取修改
+```
+git cherry-pick {commit-id}
+git merge branch 合并分支修改 
+git rebase dst_branch  将分支修改 rebase到当前分支
+```
+
+### 解决冲突
+```
+解决完冲突后， git add/rm <conflicted_files> 标记已解决
+git cherry-pick --continue
+git rebase --continue
 ```
 
 ### 远程合作
 ```
-git push origin source_branch:dst_branch 向远程推送  
+git fetch origin branch 下载最新文件  
+git pull 下载并更新 默认是rebase合并
 git push -f 强制更新与 commit amend一起使用
-git fetch origin branch:local_branch 下载最新文件  
-git pull 下载并更新  
+git push origin dst_branch 指定远程分支
 ```  
