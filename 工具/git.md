@@ -1,4 +1,4 @@
-如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，**必须使用git lfs clone**。
+
 
 ## 配置
 
@@ -41,7 +41,7 @@ ssh-keygen -t rsa -b 3072
 
 ## 工作区
 ```
-- git clone  
+- git clone  如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，必须使用git lfs clone
 - git init
 - git remote add origin(远端仓库名) {url}
 ```
