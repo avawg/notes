@@ -42,7 +42,8 @@ ssh-keygen -t rsa -b 3072
 ## 工作区
 ```
 - git clone  
-- git init, git remote add origin
+- git init
+- git remote add origin(远端仓库名) {url}
 ```
 
 ## 分支管理  
@@ -115,8 +116,8 @@ git rebase --continue
 
 ### 远程合作
 ```
-git fetch origin branch 下载最新文件  
+git fetch [origin branch] 下载最新文件  
 git pull 下载并更新 默认是rebase合并
 git push -f 强制更新与 commit amend一起使用
-git push origin dst_branch 指定远程分支
+git push [origin dst_branch] 指定远程分支
 ```  
