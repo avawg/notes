@@ -96,7 +96,7 @@ git revert HEAD 新建一次提交，撤销当前HEAD的更改
 
 ### 合并commit记录
 ```
-git reset -i HEAD~N 合并最近N条修改记录
+git rebase -i HEAD~N 合并最近N条修改记录
 pick -> s
 ```
 
