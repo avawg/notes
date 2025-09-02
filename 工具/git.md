@@ -107,6 +107,8 @@ pick -> s
 ### 抽取修改
 ```
 git cherry-pick {commit-id}
+git format-patch -1 {commit-id} 打patch
+git am *.patch
 git merge branch 合并分支修改 
 git rebase dst_branch  将分支修改 rebase到当前分支
 ```
