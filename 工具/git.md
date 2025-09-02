@@ -65,10 +65,11 @@ git checkout -b branch origin/origin_branch 新建分支并设置跟踪远程仓
 
 ## 日志&差异
 ```
-git log 查看commit日志
+git log [--one-line]查看commit日志
 git reflog
 git status 查看状态  
 git diff 查看更改  --name--status
+git diff HEAD^ HEAD 查看上一个commit修改内容
 ```
 
 ## 工作命令 
