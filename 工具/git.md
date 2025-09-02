@@ -69,8 +69,8 @@ git log [--one-line]查看commit日志
 git reflog
 git status 查看状态  
 git diff 查看更改(工作区 vs 暂存区)  --name--status
-git diff --cached 暂存区 vs 最新提交（HEAD）
 git diff HEAD 工作区 vs 最新提交（HEAD）
+git diff --cached 暂存区 vs 最新提交（HEAD）
 git diff HEAD^ HEAD 查看上一个commit修改内容
 ```
 
