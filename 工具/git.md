@@ -52,6 +52,7 @@ ssh-keygen -t rsa -b 3072
 git branch 查看分支 -r -vv
 git switch 切换分支  
 git checkout -b branch origin/origin_branch 新建分支并设置跟踪远程仓库分支
+git checkout --detach
 ```
 
 ## 文件修改 
