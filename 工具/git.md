@@ -50,6 +50,7 @@ ssh-keygen -t rsa -b 3072
 ## 分支管理  
 ```
 git branch 查看分支 -r -vv
+git branch --set-upstream-to=origin/main
 git switch 切换分支  
 git checkout -b branch origin/origin_branch 新建分支并设置跟踪远程仓库分支
 git checkout --detach
