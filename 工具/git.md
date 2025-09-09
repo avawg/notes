@@ -63,6 +63,8 @@ git checkout --detach
 - mv 移动文件  
 - restore 复原修改
 - checkout file 回退未在暂存区的更改
+- git reset --hard HEAD   # 丢弃暂存区和工作区已修改的文件
+- git clean -fd           # 删除未跟踪的文件
 ```
 
 ## 日志&差异
