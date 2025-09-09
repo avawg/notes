@@ -1,0 +1,7 @@
+diff -ruN dir1 dir2 -Z
+```
+-r 递归比较子目录
+-u 生成统一 diff 格式（类似 git diff 风格）
+-N 如果文件只在一边存在，会显示新增/删除
+-Z (--ignore-trailing-space) 会忽略行尾的空格和 Tab，不包括中间的空格
+```
