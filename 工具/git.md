@@ -130,4 +130,7 @@ git fetch [origin branch] 下载最新文件
 git pull [--rebase] 同步并更新本地代码，选择合并方式
 git push -f 强制更新与 commit amend一起使用(amend后历史提交记录不重合)
 git push [origin dst_branch] 指定远程分支
-```  
+```
+
+### Gerrit系统
+git push<remote_name>HEAD:refs/for/<branch_name>
