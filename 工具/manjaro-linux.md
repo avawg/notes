@@ -88,6 +88,9 @@ ifcconfig | ipconfig
 ```
 mount [-t 文件系统] [设备名] [挂载点]  
 umount [挂载点]
+
+mount -o loop system.img 挂载点
+mount 命令默认是挂载物理块设备（比如 /dev/sda1、U 盘 /dev/sdb1），而 system.img 是普通的文件（不是系统识别的块设备）。loop 选项的核心作用是让系统自动创建一个虚拟循环设备（比如 /dev/loop0），把镜像文件关联到这个虚拟设备上，再挂载这个虚拟设备。
 mount -t nfs
 fdisk -l [fixed disk 固定磁盘]查看磁盘分区信息
 
