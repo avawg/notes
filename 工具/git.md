@@ -41,7 +41,8 @@ ssh-keygen -t rsa -b 3072
 
 ## 工作区
 ```
-- git clone  如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，必须使用git lfs clone
+- git clone  如果git服务器已支持git-lfs，对二进制文件进行了区分管理。克隆文件时，须使用git lfs clone
+  大文件清单 .gitattributes
 - git init
 - git remote add origin(远端仓库名) {url}
 - git remote -v 查看远程仓库
@@ -51,8 +52,8 @@ ssh-keygen -t rsa -b 3072
 ```
 git branch 查看分支 -r -vv
 git branch --set-upstream-to=origin/main
-git switch 切换分支  
 git checkout -b branch origin/origin_branch 新建分支并设置跟踪远程仓库分支
+git checkout 切换分支 
 git checkout --detach
 ```
 
@@ -64,7 +65,7 @@ git checkout --detach
 - restore 复原修改
 - checkout file 回退未在暂存区的更改
 - git reset --hard HEAD   # 丢弃暂存区和工作区已修改的文件
-- git clean -fd           # 删除未跟踪的文件
+- git clean -fxd           # 删除未跟踪的文件
 ```
 
 ## 日志&差异
